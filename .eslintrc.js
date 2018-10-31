@@ -41,8 +41,8 @@ module.exports = {
 		'comma-dangle': [2, 'never'],
 		'prefer-const': 2,
 		'comma-spacing': 2,
-		'no-debugger': 2,
+		'no-debugger': 0,
 		'arrow-parens': 2,
-		'no-console': 2
+		'no-console': 0
 	}
 }

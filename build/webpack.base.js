@@ -15,7 +15,8 @@ module.exports = {
 		extensions: ['.js', '.jsx', '.json', 'index.jsx'],
 		modules: [
 			path.resolve(__dirname, '../node_modules'),
-			path.resolve(__dirname, '../src')
+			path.resolve(__dirname, '../src'),
+			path.resolve(__dirname, '../src/views')
 		],
 		alias: {
 			'react': path.resolve('./node_modules/react'),

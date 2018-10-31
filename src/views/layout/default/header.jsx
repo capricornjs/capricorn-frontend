@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 
-export default class Test extends Component {
+export default class Header extends Component {
 	render () {
 		return (
 			<div>
-				<div>test - capricorn-frontend</div>
+				<div>header</div>
 			</div>
 		)
 	}
