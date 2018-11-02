@@ -43,6 +43,7 @@ module.exports = {
 		'comma-spacing': 2,
 		'no-debugger': 0,
 		'arrow-parens': 2,
-		'no-console': 0
+		'no-console': 0,
+		'no-undef': 0
 	}
 }

@@ -19,8 +19,7 @@ module.exports = {
 			path.resolve(__dirname, '../src/views')
 		],
 		alias: {
-			'react': path.resolve('./node_modules/react'),
-			'react-dom': path.resolve('./node_modules/react-dom')
+			'mona': path.resolve(__dirname, '../node_modules/mor-design')
 		}
 	},
 	
@@ -39,6 +38,16 @@ module.exports = {
 				// formatter: require('eslint-friendly-formatter'),
 				emitWarning: false
 			}
+		}, {
+			test: /\.(eot|woff2?|ttf|svg)$/,
+			use: [
+				{
+					loader: 'url-loader',
+					options: {
+						limit: 8192
+					}
+				}
+			]
 		}]
 	},
 	

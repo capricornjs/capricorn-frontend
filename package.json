@@ -33,6 +33,7 @@
 		"@commitlint/config-conventional": "^7.1.2",
 		"babel-eslint": "^10.0.1",
 		"babel-loader": "^8.0.4",
+		"babel-plugin-import": "^1.11.0",
 		"babel-plugin-jsx-control-statements": "^3.2.8",
 		"babel-plugin-transform-object-assign": "^6.22.0",
 		"chalk": "^2.4.1",
@@ -61,6 +62,7 @@
 		"stylelint-order": "^1.0.0",
 		"stylelint-webpack-plugin": "^0.10.5",
 		"uglifyjs-webpack-plugin": "^2.0.1",
+		"url-loader": "^1.1.2",
 		"webpack": "^4.20.2",
 		"webpack-bundle-analyzer": "^3.0.2",
 		"webpack-dev-server": "^3.1.9"
@@ -69,6 +71,7 @@
 		"axios": "^0.18.0",
 		"classnames": "^2.2.6",
 		"mona-events": "^0.1.0",
+		"mor-design": "^0.1.2",
 		"moreact-router": "^0.4.0",
 		"react": "^16.5.2",
 		"react-dom": "^16.5.2"
