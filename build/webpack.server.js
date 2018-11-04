@@ -10,16 +10,16 @@ const serverConf = {
 		colors: true
 	}
 }
-
-const proxyPaths = [
-	'module'
-];
-proxyPaths.forEach(function(v){
-	serverConf.proxy[`/${v}/*`] ={
-		target: 'http://127.0.0.1:3000/',
-		changeOrigin: true
-	}
-})
+//
+// const proxyPaths = [
+// 	'module'
+// ];
+// proxyPaths.forEach(function(v){
+// 	serverConf.proxy[`/${v}/*`] ={
+// 		target: 'http://127.0.0.1:3000/',
+// 		changeOrigin: true
+// 	}
+// })
 
 module.exports = serverConf
 
