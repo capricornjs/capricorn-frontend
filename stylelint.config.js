@@ -7,6 +7,7 @@ module.exports = {
 		'selector-pseudo-element-colon-notation': null,
 		'selector-list-comma-newline-after': null,
 		'at-rule-no-unknown': null,
+		'rule-empty-line-before': null,
 		'order/properties-order': []
 	}
 }

@@ -1,6 +1,6 @@
 import axios from 'axios'
 import BaseServer from './BaseServer'
-import { Toast } from 'mor-design'
+import util from './util'
 
 export default class Ajax extends BaseServer {
 	constructor (props) {
@@ -27,15 +27,17 @@ export default class Ajax extends BaseServer {
 	
 	handleResponse () {
 		this.ajax.interceptors.response.use((response) => {
-			if (response.status === 200) {
-				return response.data || {}
+			if (response.status !== 200 || !response.data) {
+				util.error('接口请求异常')
+				return Promise.reject(response)
 			}
+			if (response.data.code !== 200) {
+				util.error(response.data.msg || '接口请求失败')
+				return Promise.reject(response.data)
+			}
+			return response.data
 		}, (error) => {
-			Toast.config({
-				title: '网络异常',
-				type: 'error',
-				duration: 2000
-			})
+			util.error('网络异常')
 			return Promise.reject(error)
 		})
 	}

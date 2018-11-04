@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Header from './header'
+import Header from './header/index'
 
 export default class DefaultLayout extends Component {
 	render () {
@@ -7,9 +7,11 @@ export default class DefaultLayout extends Component {
 		const { children } = this.props
 		/*eslint-disable*/
 		return (
-			<div>
+			<div className="page-wrapper">
 				<Header />
-				{children}
+				<div className="page-wrapper-content">
+					{children}
+				</div>
 			</div>
 		)
 	}

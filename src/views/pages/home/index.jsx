@@ -1,18 +1,30 @@
 import React, { Component } from 'react'
-import classnames from 'classnames'
-import moduleServer from 'server/module'
+import './index.less'
+import Router from 'moreact-router'
+
+const Link = Router.link
 
 export default class Home extends Component {
-	UNSAFE_componentWillMount () {
-		moduleServer.getModuleList().then((res) => {
-			console.log(res)
-		})
-	}
+	menus = [{
+		name: '模块管理',
+		url: 'modules'
+		
+	}, {
+		name: '模版管理',
+		url: 'templates'
+	}, {
+		name: '创建页面',
+		url: 'createPage'
+	}]
 	
 	render () {
 		return (
-			<div className={classnames('page-home flex-center', { 'test': true })}>
-				<div>Home - capfdsdsn-frontend</div>
+			<div className="page-home d-f module-list">
+				<For of={this.menus} each="item" index="index">
+					<Link to={item.url} key={index} className="menu-item">
+						{item.name}
+					</Link>
+				</For>
 			</div>
 		)
 	}
