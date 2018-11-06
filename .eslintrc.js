@@ -35,6 +35,7 @@ module.exports = {
 	},
 	'rules': {
 		'react/jsx-no-undef': 0,
+		'react/prop-types': 0,
 		'quotes': [2, 'single'],
 		'semi': [2, 'never'],
 		'comma-dangle': [2, 'never'],

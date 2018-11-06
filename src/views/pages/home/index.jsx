@@ -1,10 +1,16 @@
 import React, { Component } from 'react'
-import './index.less'
 import Router from 'moreact-router'
+import TemplateConfig from './module/templateConfig'
+import util from 'core/util'
+import './index.less'
 
 const Link = Router.link
 
 export default class Home extends Component {
+	state = {
+		templateConfigVisible: false
+	}
+	
 	menus = [{
 		name: '模块管理',
 		url: 'modules'
@@ -18,13 +24,13 @@ export default class Home extends Component {
 	}]
 	
 	render () {
+		const { templateConfigVisible } = this.state
 		return (
 			<div className="page-home d-f module-list">
-				<For of={this.menus} each="item" index="index">
-					<Link to={item.url} key={index} className="menu-item">
-						{item.name}
-					</Link>
-				</For>
+				<Link to="modules" className="menu-item">模块管理</Link>
+				<Link to="templates" className="menu-item">模版管理</Link>
+				<div onClick={util.toggleBool.bind(this, 'templateConfigVisible')} className="menu-item">创建页面</div>
+				<TemplateConfig visible={templateConfigVisible} onCancel={util.toggleBool.bind(this, 'templateConfigVisible')} />
 			</div>
 		)
 	}

@@ -1,0 +1,19 @@
+.componen-form-wrap {
+	.label {
+		width: 80px;
+		&:after {
+			content: '*';
+			color: red;
+			margin-left: 5px;
+			display: none;
+		}
+		&.required {
+			&:after {
+				display: inline-block;
+			}
+		}
+	}
+	& + .componen-form-wrap {
+		margin-top: 15px;
+	}
+}
