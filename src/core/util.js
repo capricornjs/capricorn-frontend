@@ -1,27 +1,24 @@
-import { Notification } from 'antd'
+import { notification } from 'antd'
 
 class Util {
-	error (msg) {
-		Notification.config({
-			title: msg,
-			type: 'error',
-			duration: 2000
+	error (message) {
+		notification.error({
+			message,
+			duration: 3000
 		})
 	}
 	
-	success (msg) {
-		Notification.config({
-			title: msg,
-			type: 'success',
-			duration: 2000
+	success (message) {
+		notification.success({
+			message,
+			duration: 3000
 		})
 	}
 	
-	info (msg) {
-		Notification.config({
-			title: msg,
-			type: 'info',
-			duration: 2000
+	info (message) {
+		notification.info({
+			message,
+			duration: 3000
 		})
 	}
 	

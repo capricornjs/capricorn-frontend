@@ -8,6 +8,10 @@ class ModuleServer extends Ajax {
 	queryPage (params) {
 		return this.get('/page/query', params)
 	}
+	
+	addModule (params) {
+		return this.post('/page/addModule', params)
+	}
 }
 
 export default new ModuleServer

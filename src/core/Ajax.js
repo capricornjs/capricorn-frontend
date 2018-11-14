@@ -15,9 +15,7 @@ export default class Ajax extends BaseServer {
 	}
 	
 	get (url, params = {}) {
-		return this.ajax.get(url, {
-			params: qs.stringify(params)
-		})
+		return this.ajax.get(url, { params })
 	}
 	
 	post (url, params = {}) {

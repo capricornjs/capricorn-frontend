@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
 import { Modal } from 'antd'
 import CustomForm from 'components/customForm'
+import pageServer from 'server/page'
+import util from 'core/util'
+import Router from 'moreact-router'
 import './index.less'
 
 export default class ModuleConfig extends Component {
@@ -10,7 +13,17 @@ export default class ModuleConfig extends Component {
 	}
 	
 	onConfirm () {
-		console.log(this.customFormRef.current.getValue())
+		const { pageName } = Router.current.params
+		const moduleConfig = this.customFormRef.current.getValue()
+		const { info = {} } = this.props
+		pageServer.addModule({
+			pageName,
+			moduleName: info.name || '',
+			moduleConfig: JSON.stringify(moduleConfig)
+		}).then(() => {
+			util.success('模块添加成功')
+			this.closeModal()
+		})
 	}
 	
 	closeModal () {
