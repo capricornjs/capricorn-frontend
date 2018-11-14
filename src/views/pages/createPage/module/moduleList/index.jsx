@@ -5,16 +5,16 @@ import { Icon } from 'antd'
 import ModuleConfig from '../moduleConfig'
 
 export default class ModuleList extends Component {
-	state = {
-		moduleConfigVisible: false,
-		moduleConfigInfo: {}
-	}
-	
-	UNSAFE_componentWillMount () {
+	componentDidMount() {
 		moduleServer.getModuleList().then((res) => {
 			this.moduleList = res.list
 			this.setState({})
 		})
+	}
+	
+	state = {
+		moduleConfigVisible: false,
+		moduleConfigInfo: {}
 	}
 	
 	moduleList = []
@@ -39,7 +39,9 @@ export default class ModuleList extends Component {
 						<Icon type="plus-circle" />
 					</div>
 				</For>
-				<ModuleConfig info={moduleConfigInfo} visible={moduleConfigVisible} onCancel={util.toggleBool.bind(this, 'moduleConfigVisible')} />
+				<If condition={moduleConfigVisible}>
+					<ModuleConfig info={moduleConfigInfo} visible={moduleConfigVisible} onCancel={util.toggleBool.bind(this, 'moduleConfigVisible')} />
+				</If>
 			</div>
 		)
 	}

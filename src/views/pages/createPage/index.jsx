@@ -5,7 +5,8 @@ import service from './service'
 import './index.less'
 
 export default class CreatePage extends Component {
-	UNSAFE_componentWillMount () {
+	constructor () {
+		super()
 		service.setConfig(Router.current.params)
 	}
 	
