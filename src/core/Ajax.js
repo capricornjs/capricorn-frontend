@@ -1,4 +1,5 @@
 import axios from 'axios'
+import qs from 'qs'
 import BaseServer from './BaseServer'
 import util from './util'
 
@@ -14,11 +15,13 @@ export default class Ajax extends BaseServer {
 	}
 	
 	get (url, params = {}) {
-		return this.ajax.get(url, params)
+		return this.ajax.get(url, {
+			params: qs.stringify(params)
+		})
 	}
 	
 	post (url, params = {}) {
-		return this.ajax.post(url, params)
+		return this.ajax.post(url, qs.stringify(params))
 	}
 	
 	filter () {

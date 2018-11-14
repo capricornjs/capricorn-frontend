@@ -6,7 +6,7 @@ import ModuleConfig from '../moduleConfig'
 
 export default class ModuleList extends Component {
 	componentDidMount() {
-		moduleServer.getModuleList().then((res) => {
+		moduleServer.getModuleList({name: 1}).then((res) => {
 			this.moduleList = res.list
 			this.setState({})
 		})

@@ -3,6 +3,7 @@ import { Modal, Input } from 'antd'
 import FormWrap from 'components/formWrap'
 import Router from 'moreact-router'
 import util from 'core/util'
+import pageServer from 'server/page'
 import './index.less'
 
 const { TextArea } = Input
@@ -14,7 +15,13 @@ export default class TemplateConfig extends Component {
 	}
 	
 	onConfirm () {
-		Router.go('createPage', this.state)
+		pageServer.createPage(this.state).then((res) => {
+			util.success('页面创建成功')
+			Router.go('createPage', {
+				pageName: res.data.pageName
+			})
+		})
+		
 	}
 	
 	closeModal () {

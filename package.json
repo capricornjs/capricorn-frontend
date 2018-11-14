@@ -74,6 +74,7 @@
 		"mona-events": "^0.1.0",
 		"mor-design": "^0.1.2",
 		"moreact-router": "^0.4.0",
+		"qs": "^6.5.2",
 		"react": "^16.5.2",
 		"react-dom": "^16.5.2"
 	}
