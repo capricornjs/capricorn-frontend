@@ -4,21 +4,21 @@ class Util {
 	error (message) {
 		notification.error({
 			message,
-			duration: 3000
+			duration: 3
 		})
 	}
 	
 	success (message) {
 		notification.success({
 			message,
-			duration: 3000
+			duration: 3
 		})
 	}
 	
 	info (message) {
 		notification.info({
 			message,
-			duration: 3000
+			duration: 3
 		})
 	}
 	

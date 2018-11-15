@@ -30,7 +30,9 @@ export default class Home extends Component {
 				<Link to="modules" className="menu-item">模块管理</Link>
 				<Link to="templates" className="menu-item">模版管理</Link>
 				<div onClick={util.toggleBool.bind(this, 'templateConfigVisible')} className="menu-item">创建页面</div>
-				<TemplateConfig visible={templateConfigVisible} onCancel={util.toggleBool.bind(this, 'templateConfigVisible')} />
+				<If condition={templateConfigVisible}>
+					<TemplateConfig visible={templateConfigVisible} onCancel={util.toggleBool.bind(this, 'templateConfigVisible')} />
+				</If>
 			</div>
 		)
 	}
