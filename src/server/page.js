@@ -6,11 +6,11 @@ class ModuleServer extends Ajax {
 	}
 	
 	queryPageTemplates() {
-		return this.get('/page/queryPageTemplates')
+		return this.get('/template/queryPageTemplates')
 	}
 	
 	queryPage (params) {
-		return this.get('/page/query', params)
+		return this.post('/page/query', params)
 	}
 	
 	queryModuleByPageName (params) {

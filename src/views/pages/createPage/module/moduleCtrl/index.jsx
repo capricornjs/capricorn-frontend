@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import pageServer from 'server/page'
 import Router from 'moreact-router'
+import util from 'core/util'
 import './index.less'
 
 export default class ModuleCtrl extends Component {
@@ -28,7 +29,7 @@ export default class ModuleCtrl extends Component {
 			pageName: this.pageName,
 			idList
 		}).then((res) => {
-			console.log(res)
+			util.success(res.msg)
 		})
 	}
 	
