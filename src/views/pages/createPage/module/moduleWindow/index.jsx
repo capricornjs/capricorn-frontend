@@ -14,7 +14,7 @@ export default class ModuleWinodw extends Component {
 			<div className="module-window">
 				<div className="header"></div>
 				<div className="wrap">
-					<iframe src={`${this.url}?_=${Date.now()}`} className="full" frameBorder="0"></iframe>r
+					<iframe src={`${this.url}?_=${Date.now()}`} className="full" frameBorder="0"></iframe>
 				</div>
 			</div>
 		)
