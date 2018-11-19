@@ -11,24 +11,12 @@ export default class Home extends Component {
 		templateConfigVisible: false
 	}
 	
-	menus = [{
-		name: '模块管理',
-		url: 'modules'
-		
-	}, {
-		name: '模版管理',
-		url: 'templates'
-	}, {
-		name: '创建页面',
-		url: 'createPage'
-	}]
-	
 	render () {
 		const { templateConfigVisible } = this.state
 		return (
 			<div className="page-home d-f module-list">
 				<Link to="modules" className="menu-item">模块管理</Link>
-				<Link to="templates" className="menu-item">模版管理</Link>
+				<Link to="pages" className="menu-item">页面管理</Link>
 				<div onClick={util.toggleBool.bind(this, 'templateConfigVisible')} className="menu-item">创建页面</div>
 				<If condition={templateConfigVisible}>
 					<TemplateConfig visible={templateConfigVisible} onCancel={util.toggleBool.bind(this, 'templateConfigVisible')} />

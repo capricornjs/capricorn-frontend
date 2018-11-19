@@ -2,7 +2,7 @@ import Ajax from 'core/Ajax'
 
 class ModuleServer extends Ajax {
 	createPage (params) {
-		return this.post('/page/create', params)
+		return this.post('/page/createPage', params)
 	}
 	
 	queryPageTemplates() {
@@ -10,7 +10,11 @@ class ModuleServer extends Ajax {
 	}
 	
 	queryPage (params) {
-		return this.post('/page/query', params)
+		return this.get('/page/queryPage', params)
+	}
+	
+	queryAllPages (params) {
+		return this.get('/page/queryAllPages', params)
 	}
 	
 	queryModuleByPageName (params) {
